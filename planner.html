@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Planner</title>
+</head>
+
+<body>
+
+<h1>Study Planner</h1>
+
+<input id="task" placeholder="New task">
+<button onclick="addTask()">Add</button>
+
+<ul id="list"></ul>
+
+<script>
+let tasks = JSON.parse(localStorage.getItem("tasks")) || [];
+
+function showTasks() {
+  let list = document.getElementById("list");
+  list.innerHTML = "";
+  tasks.forEach(t => {
+    let li = document.createElement("li");
+    li.innerText = t;
+    list.appendChild(li);
+  });
+}
+
+function addTask() {
+  let task = document.getElementById("task").value;
+  if (!task) return;
+  tasks.push(task);
+  localStorage.setItem("tasks", JSON.stringify(tasks));
+  showTasks();
+}
+
+showTasks();
+</script>
+
+<a href="index.html">Back</a>
+
+</body>
+</html>
