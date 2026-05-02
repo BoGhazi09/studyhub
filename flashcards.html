@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Flashcards</title>
+</head>
+
+<body>
+
+<h1>Flashcards</h1>
+
+<input id="q" placeholder="Question">
+<input id="a" placeholder="Answer">
+<button onclick="addCard()">Add</button>
+
+<div id="cards"></div>
+
+<script>
+let cards = JSON.parse(localStorage.getItem("cards")) || [];
+
+function showCards() {
+  let div = document.getElementById("cards");
+  div.innerHTML = "";
+  cards.forEach(c => {
+    let d = document.createElement("div");
+    d.innerHTML = "<b>" + c.q + "</b><br>" + c.a;
+    div.appendChild(d);
+  });
+}
+
+function addCard() {
+  let q = document.getElementById("q").value;
+  let a = document.getElementById("a").value;
+  if (!q || !a) return;
+  cards.push({q:q, a:a});
+  localStorage.setItem("cards", JSON.stringify(cards));
+  showCards();
+}
+
+showCards();
+</script>
+
+<a href="index.html">Back</a>
+
+</body>
+</html>
