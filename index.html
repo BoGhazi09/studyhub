@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>StudyHub</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body { margin:0; font-family: Arial; background:#eef2f7; }
+header { background:#2b2d42; color:white; padding:15px; text-align:center; }
+nav a { color:white; margin:10px; text-decoration:none; }
+.container { padding:20px; max-width:800px; margin:auto; }
+
+.card {
+  background:white;
+  padding:20px;
+  margin-top:15px;
+  border-radius:10px;
+  text-align:center;
+  cursor:pointer;
+}
+</style>
+</head>
+
+<body>
+
+<header>
+<h1>StudyHub</h1>
+<nav>
+<a href="notes.html">Notes</a>
+<a href="flashcards.html">Flashcards</a>
+<a href="planner.html">Planner</a>
+</nav>
+</header>
+
+<div class="container">
+
+<div class="card" onclick="location.href='notes.html'">
+<h3>Notes</h3>
+</div>
+
+<div class="card" onclick="location.href='flashcards.html'">
+<h3>Flashcards</h3>
+</div>
+
+<div class="card" onclick="location.href='planner.html'">
+<h3>Planner</h3>
+</div>
+
+</div>
+
+</body>
+</html>
